@@ -1,0 +1,22 @@
+{
+  "name": "gbd.macro",
+  "version": "0.0.1",
+  "description": "debug expressions with pretty printed output",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/anilanar/gbd",
+  "author": "Anil Anar <mail@anilanar.me>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build && babel src/index.ts --out-dir dist -x '.ts'",
+    "test": "exit 0",
+    "lint": "exit 0"
+  },
+  "dependencies": {
+    "babel-plugin-gbd": "^0.0.1",
+    "babel-plugin-macros": "^2.8.0"
+  }
+}

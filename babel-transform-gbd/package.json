@@ -1,0 +1,17 @@
+{
+  "name": "babel-transform-gbd",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc --build && babel src/index.ts --out-dir dist -x '.ts'",
+    "test": "exit 0",
+    "lint": "exit 0"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.0.0",
+    "fp-ts": "^2.5.3"
+  }
+}

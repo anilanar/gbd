@@ -1,0 +1,21 @@
+{
+  "name": "gbd",
+  "version": "0.0.2",
+  "description": "debug expressions with pretty printed output",
+  "repository": "https://github.com/anilanar/gbd",
+  "author": "Anil Anar <mail@anilanar.me>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "exit 0",
+    "lint": "exit 0"
+  },
+  "dependencies": {
+    "pretty-format": "^25.3.0"
+  }
+}

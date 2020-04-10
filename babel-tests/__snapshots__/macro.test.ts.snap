@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros 1. macros: 1. macros 1`] = `
+
+import { gbd } from 'gbd.macro'
+gbd(1 + 1);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+gbd(1 + 1, "1 + 1");
+
+
+`;
+
+exports[`macros 2. macros: 2. macros 1`] = `
+
+import { gbd } from 'gbd.macro'
+gbd(new foo(1 + 1)[1].bar());
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+gbd(new foo(1 + 1)[1].bar(), "new foo(1 + 1)[1].bar()");
+
+
+`;
+
+exports[`macros 3. macros: 3. macros 1`] = `
+
+import { gbd } from 'gbd.macro'
+gbd({
+  multi: 'foo',
+  line: 'bar',
+  obj: 'quu',
+});
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+gbd(
+  {
+    multi: "foo",
+    line: "bar",
+    obj: "quu",
+  },
+  "{\\n  multi: 'foo',\\n  line: 'bar',\\n  obj: 'quu'\\n}"
+);
+
+
+`;
+
+exports[`macros 4. macros: 4. macros 1`] = `
+
+import { gbd } from 'gbd.macro'
+function test() {
+  gbd({
+    multi: 'foo',
+    line: 'bar',
+    obj: 'quu',
+  });
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function test() {
+  gbd(
+    {
+      multi: "foo",
+      line: "bar",
+      obj: "quu",
+    },
+    "{\\n  multi: 'foo',\\n  line: 'bar',\\n  obj: 'quu'\\n}"
+  );
+}
+
+
+`;

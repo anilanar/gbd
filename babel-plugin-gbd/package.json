@@ -1,0 +1,15 @@
+{
+  "name": "babel-plugin-gbd",
+  "private": true,
+  "version": "0.0.1",
+  "description": "debug expressions with pretty printed output",
+  "main": "index.js",
+  "scripts": {
+    "build": "exit 0",
+    "test": "exit 0",
+    "lint": "exit 0"
+  },
+  "repository": "https://github.com/anilanar/gbd",
+  "author": "Anil Anar <mail@anilanar.me>",
+  "license": "MIT"
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "es5",
+    "lib": ["ESNext"],
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "typeRoots": ["./types"]
+  }
+}
