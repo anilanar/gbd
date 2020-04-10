@@ -7,7 +7,9 @@ gbd(1 + 1);
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-gbd(1 + 1, "1 + 1");
+import { gbd as _gbd } from "gbd";
+
+_gbd(1 + 1, "1 + 1");
 
 
 `;
@@ -19,7 +21,9 @@ gbd(new foo(1 + 1)[1].bar());
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-gbd(new foo(1 + 1)[1].bar(), "new foo(1 + 1)[1].bar()");
+import { gbd as _gbd } from "gbd";
+
+_gbd(new foo(1 + 1)[1].bar(), "new foo(1 + 1)[1].bar()");
 
 
 `;
@@ -35,7 +39,9 @@ gbd({
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-gbd(
+import { gbd as _gbd } from "gbd";
+
+_gbd(
   {
     multi: "foo",
     line: "bar",
@@ -60,8 +66,10 @@ function test() {
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
+import { gbd as _gbd } from "gbd";
+
 function test() {
-  gbd(
+  _gbd(
     {
       multi: "foo",
       line: "bar",
@@ -70,6 +78,27 @@ function test() {
     "{\\n  multi: 'foo',\\n  line: 'bar',\\n  obj: 'quu'\\n}"
   );
 }
+
+
+`;
+
+exports[`macros 5. macros: 5. macros 1`] = `
+
+import { gbd } from 'gbd.macro'
+function test() {
+  gbd(1 + 2);
+}
+gbd(1 + 2);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { gbd as _gbd } from "gbd";
+
+function test() {
+  _gbd(1 + 2, "1 + 2");
+}
+
+_gbd(1 + 2, "1 + 2");
 
 
 `;

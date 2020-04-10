@@ -8,14 +8,17 @@ pluginTester({
     filename: __filename,
   },
   tests: [
+    // Simple expression
     `
       import { gbd } from 'gbd.macro'
       gbd(1 + 1);
     `,
+    // Complex expression
     `
       import { gbd } from 'gbd.macro'
       gbd(new foo(1 + 1)[1].bar());
     `,
+    // Multiline expression
     `
       import { gbd } from 'gbd.macro'
       gbd({
@@ -24,6 +27,7 @@ pluginTester({
         obj: 'quu',
       });
     `,
+    // Multiline expression in an indented closure
     `
       import { gbd } from 'gbd.macro'
       function test() {
@@ -34,5 +38,13 @@ pluginTester({
         });
       }
     `,
+    // Multiple gbds in a single program
+    `
+    import { gbd } from 'gbd.macro'
+    function test() {
+      gbd(1 + 2);
+    }
+    gbd(1 + 2);
+  `,
   ],
 });

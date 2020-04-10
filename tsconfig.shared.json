@@ -10,7 +10,6 @@
     "emitDeclarationOnly": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "typeRoots": ["./types"]
+    "noUnusedParameters": true
   }
 }

@@ -4,7 +4,6 @@
     "emitDeclarationOnly": false,
     "lib": ["ES5", "DOM"],
     "outDir": "dist",
-    "baseUrl": "./",
     "rootDir": "src"
   },
   "files": ["src/index.ts"],

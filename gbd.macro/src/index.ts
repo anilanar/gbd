@@ -8,8 +8,4 @@ export default createMacro(({ references, babel }) => {
   if (E.isLeft(result)) {
     throw new MacroError(result.left.message);
   }
-
-  return {
-    keepImports: true,
-  };
 });
