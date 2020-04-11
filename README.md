@@ -1,10 +1,10 @@
 # 🐸 `gbd.macro`
 
-> Prints and returns the value of a given expression for quick and dirty debugging.
-
-This is a shameless port of rust's `dbg!` macro.
+`gbd.macro` is a [babel plugin macro](https://github.com/kentcdodds/babel-plugin-macros) that "prints and returns the value of a given expression for quick and dirty debugging". It is a shameless port of rust's `dbg!` macro.
 
 `gbd.macro` is Typescript ready!
+
+---
 
 ## How to use
 
@@ -45,7 +45,7 @@ console.log(
 ---
 
 ```typescript
-import { gbd } from 'gbd.macro';
+import { gbd } from "gbd.macro";
 
 const a = 2;
 const b = gbd(a * 2) + 1;
@@ -63,12 +63,12 @@ b === 5; // true
 ---
 
 ```typescript
-import { gbd } from 'gbd.macro';
+import { gbd } from "gbd.macro";
 
 function foo(n: number) {
-    if (gbd(n / 4) === 0) {
-        // Do something
-    }
+  if (gbd(n / 4) === 0) {
+    // Do something
+  }
 }
 
 foo(3);
@@ -127,3 +127,44 @@ n <= 1
 > factorial(4)
 = 24
 ```
+
+---
+
+## How it works
+
+When you use `gbd.macro`, the following transformation happens:
+
+```
+import { gbd } from 'gbd.macro';
+
+gbd(1 + 2);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { gbd } from 'gbd';
+
+gbd(1 + 2, "1 + 2");
+```
+
+`gbd` is implemented roughly as follows:
+
+```javascript
+import format from "pretty-format";
+
+export function gbd(val, expr) {
+  console.debug(`> ${expr}\n= ${format(val)}`);
+  return val;
+}
+```
+
+---
+
+## Inspiration
+
+- A [tweet](https://twitter.com/frontsideair/status/124778767098343014) from [Fatih Altinok](https://twitter.com/frontsideair).
+
+- [rust's dbg!](https://doc.rust-lang.org/std/macro.dbg.html).
+
+## License
+
+MIT
