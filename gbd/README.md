@@ -1,0 +1,1 @@
+See [anilanar/gbd](https://github.com/anilanar/gbd) for more details. This package isn't meant to be used by itself.
