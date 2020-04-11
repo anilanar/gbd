@@ -4,7 +4,8 @@
     "outDir": "dist",
     "rootDir": "src",
     "composite": false,
-    "noEmit": true
+    "noEmit": true,
+    "emitDeclarationOnly": false
   },
   "files": ["src/index.ts"],
   "references": [{ "path": "../babel-transform-gbd" }]
