@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && babel src/index.ts --out-dir dist -x '.ts' && cp src/types.d.ts dist/index.d.ts",
+    "build": "tsc --build && babel src/index.ts --out-dir dist -x '.ts' && cp src/types.d.ts dist/index.d.ts",
     "test": "exit 0",
     "lint": "exit 0"
   },
