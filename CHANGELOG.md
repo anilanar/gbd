@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.0](https://github.com/anilanar/gbd/compare/v0.3.1-alpha.3...v0.4.0-alpha.0) (2020-04-11)
+
+
+### Features
+
+* **gbd:** improve log output formatting ([4c3a8ba](https://github.com/anilanar/gbd/commit/4c3a8ba35f3470df694e6db0b81940434af7cb62))
+
+
+
+
+
 ## [0.3.1-alpha.3](https://github.com/anilanar/gbd/compare/v0.3.1-alpha.2...v0.3.1-alpha.3) (2020-04-11)
 
 

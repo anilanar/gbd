@@ -1,7 +1,7 @@
 {
   "name": "babel-tests",
   "private": true,
-  "version": "0.3.1-alpha.3",
+  "version": "0.4.0-alpha.0",
   "description": "debug expressions with pretty printed output",
   "repository": "https://github.com/anilanar/gbd",
   "author": "Anil Anar <mail@anilanar.me>",
@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "babel-plugin-gbd": "^0.3.1-alpha.0",
-    "gbd.macro": "^0.3.1-alpha.3"
+    "gbd.macro": "^0.4.0-alpha.0"
   }
 }
