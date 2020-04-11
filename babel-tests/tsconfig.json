@@ -1,7 +1,9 @@
 {
   "extends": "../tsconfig.shared.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src"
-  }
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    "composite": false
+  },
+  "files": ["macro.test.ts", "../types/babel-plugin-tester.d.ts"]
 }
