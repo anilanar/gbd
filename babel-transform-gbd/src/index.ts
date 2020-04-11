@@ -134,7 +134,10 @@ const replaceWithGbd = (t: typeof Babel.types) => (
     tuples,
     NEA.map(([callExprPath, expr]) => () => {
       callExprPath.replaceWith(
-        t.callExpression(iden, [expr, t.stringLiteral(generate(expr).code)])
+        t.callExpression(t.cloneDeep(iden), [
+          expr,
+          t.stringLiteral(generate(expr).code),
+        ])
       );
     }),
     A.array.sequence(IO.io),

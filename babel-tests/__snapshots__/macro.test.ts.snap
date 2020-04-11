@@ -14,6 +14,22 @@ _gbd(1 + 1, "1 + 1");
 
 `;
 
+exports[`macros 1. macros: 1. macros 2`] = `
+
+import { gbd } from 'gbd.macro'
+gbd(1 + 1);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+"use strict";
+
+var _gbd2 = require("gbd");
+
+(0, _gbd2.gbd)(1 + 1, "1 + 1");
+
+
+`;
+
 exports[`macros 2. macros: 2. macros 1`] = `
 
 import { gbd } from 'gbd.macro'
@@ -24,6 +40,22 @@ gbd(new foo(1 + 1)[1].bar());
 import { gbd as _gbd } from "gbd";
 
 _gbd(new foo(1 + 1)[1].bar(), "new foo(1 + 1)[1].bar()");
+
+
+`;
+
+exports[`macros 2. macros: 2. macros 2`] = `
+
+import { gbd } from 'gbd.macro'
+gbd(new foo(1 + 1)[1].bar());
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+"use strict";
+
+var _gbd2 = require("gbd");
+
+(0, _gbd2.gbd)(new foo(1 + 1)[1].bar(), "new foo(1 + 1)[1].bar()");
 
 
 `;
@@ -42,6 +74,33 @@ gbd({
 import { gbd as _gbd } from "gbd";
 
 _gbd(
+  {
+    multi: "foo",
+    line: "bar",
+    obj: "quu",
+  },
+  "{\\n  multi: 'foo',\\n  line: 'bar',\\n  obj: 'quu'\\n}"
+);
+
+
+`;
+
+exports[`macros 3. macros: 3. macros 2`] = `
+
+import { gbd } from 'gbd.macro'
+gbd({
+  multi: 'foo',
+  line: 'bar',
+  obj: 'quu',
+});
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+"use strict";
+
+var _gbd2 = require("gbd");
+
+(0, _gbd2.gbd)(
   {
     multi: "foo",
     line: "bar",
@@ -82,6 +141,37 @@ function test() {
 
 `;
 
+exports[`macros 4. macros: 4. macros 2`] = `
+
+import { gbd } from 'gbd.macro'
+function test() {
+  gbd({
+    multi: 'foo',
+    line: 'bar',
+    obj: 'quu',
+  });
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+"use strict";
+
+var _gbd2 = require("gbd");
+
+function test() {
+  (0, _gbd2.gbd)(
+    {
+      multi: "foo",
+      line: "bar",
+      obj: "quu",
+    },
+    "{\\n  multi: 'foo',\\n  line: 'bar',\\n  obj: 'quu'\\n}"
+  );
+}
+
+
+`;
+
 exports[`macros 5. macros: 5. macros 1`] = `
 
 import { gbd } from 'gbd.macro'
@@ -99,6 +189,68 @@ function test() {
 }
 
 _gbd(1 + 2, "1 + 2");
+
+
+`;
+
+exports[`macros 5. macros: 5. macros 2`] = `
+
+import { gbd } from 'gbd.macro'
+function test() {
+  gbd(1 + 2);
+}
+gbd(1 + 2);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+"use strict";
+
+var _gbd2 = require("gbd");
+
+function test() {
+  (0, _gbd2.gbd)(1 + 2, "1 + 2");
+}
+
+(0, _gbd2.gbd)(1 + 2, "1 + 2");
+
+
+`;
+
+exports[`macros 6. macros: 6. macros 1`] = `
+
+import "./styles.css";
+import { gbd } from "gbd.macro";
+
+gbd(1 + 2);
+gbd(99 / 3);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { gbd as _gbd } from "gbd";
+import "./styles.css";
+
+_gbd(1 + 2, "1 + 2");
+
+_gbd(99 / 3, "99 / 3");
+
+
+`;
+
+exports[`macros 6. macros: 6. macros 2`] = `
+
+import { gbd } from "gbd.macro";
+
+gbd(1 + 2);
+gbd(99 / 3);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+"use strict";
+
+var _gbd2 = require("gbd");
+
+(0, _gbd2.gbd)(1 + 2, "1 + 2");
+(0, _gbd2.gbd)(99 / 3, "99 / 3");
 
 
 `;
