@@ -2,7 +2,9 @@
   "extends": "../tsconfig.shared.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "composite": false,
+    "noEmit": true
   },
   "files": ["src/index.ts"],
   "references": [{ "path": "../babel-transform-gbd" }]
