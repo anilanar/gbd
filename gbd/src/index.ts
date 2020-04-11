@@ -13,6 +13,6 @@ export function gbd<T>(val: T, expr?: string): T {
     );
     return val;
   }
-  console.debug(`> ${expr}\n=`, format(val));
+  console.debug(`> ${expr}\n= ${format(val)}`);
   return val;
 }
